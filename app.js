@@ -8,7 +8,7 @@ app.use(express.static('public'));
 app.use(express.static('src/views'));
 
 app.get('/', function(req, res) {
-    res.send("Hello world!");
+    res.send('Hello world!');
 });
 
 app.listen(5000, function(err){
