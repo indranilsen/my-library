@@ -24,8 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(session());
-app.use(passport.initialize());
-app.use(passport.session());
+
+require('./src/config/passport')(app);
 
 // Setting up template engine
 app.set('views', './src/views');
