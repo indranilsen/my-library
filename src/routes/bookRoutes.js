@@ -1,15 +1,21 @@
 var express = require('express');
 var bookRouter = express.Router();
-
+var mongodb = require('mongodb').MongoClient;
 
 var router = function(nav) {
 
     bookRouter.route('/')
         .get(function (req, res) {
-            res.render('bookListView', {
-                title: "Books",
-                nav: nav,
-                books: books
+            var url = 'mongodb://localhost:27017/libraryApp';
+            mongodb.connect(url, function(err, db) {
+                var collection = db.collection('books');
+                collection.find({}).toArray(function(err, results) {
+                    res.render('bookListView', {
+                        title: 'Books',
+                        nav: nav,
+                        books: results
+                    });
+                });
             });
         });
 
@@ -17,7 +23,7 @@ var router = function(nav) {
         .get(function (req, res) {
             var id = req.params.id;
             res.render('bookView', {
-                title: "Book",
+                title: 'Book',
                 nav: nav,
                 book: books[id]
             });
