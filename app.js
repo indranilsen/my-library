@@ -13,8 +13,6 @@ var nav = [{
     Text: 'Author'
     }];
 
-
-
 // Serving static files
 app.use(express.static('public'));
 
@@ -23,20 +21,10 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 // Routes
-
-//var nav = [
-//    {
-//        Link: '/Books',
-//        Text: 'Book'
-//    },
-//    {
-//        Link: '/Authors',
-//        Text: 'Author'
-//    }
-//];
-
 var bookRouter = require('./src/routes/bookRoutes')(nav);
-app.use('/Books', bookRouter);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
+app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', function(req, res) {
     res.render('index', {

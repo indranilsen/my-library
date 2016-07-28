@@ -3,43 +3,6 @@ var bookRouter = express.Router();
 
 
 var router = function(nav) {
-    var books = [
-    {
-        title: 'Test Book',
-        genre: 'Fiction',
-        author: 'Test Author',
-        read: false
-    },
-    {
-        title: 'Test Book',
-        genre: 'Fiction',
-        author: 'Test Author',
-        read: false
-    },
-    {
-        title: 'Test Book',
-        genre: 'Fiction',
-        author: 'Test Author',
-        read: false
-    },
-    {
-        title: 'Test Book',
-        genre: 'Fiction',
-        author: 'Test Author',
-        read: false
-    },
-    {
-        title: 'Test Book',
-        genre: 'Fiction',
-        author: 'Test Author',
-        read: false
-    },
-    {
-        title: 'Test Book',
-        genre: 'Fiction',
-        author: 'Test Author',
-        read: false
-    }];
 
     bookRouter.route('/')
         .get(function (req, res) {
