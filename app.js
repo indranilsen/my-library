@@ -23,7 +23,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(session());
+app.use(session({secret: 'library'}));
 
 require('./src/config/passport')(app);
 
@@ -37,11 +37,11 @@ var adminRouter = require('./src/routes/adminRoutes')(nav);
 var authRouter = require('./src/routes/authRoutes')(nav);
 app.use('/books', bookRouter);
 app.use('/admin', adminRouter);
-app.use('/auth', adminRouter);
+app.use('/auth', authRouter);
 
 app.get('/', function(req, res) {
     res.render('index', {
-        title: "Hello from render", 
+        title: 'Hello from render', 
         nav: nav
     });
 });
