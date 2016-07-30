@@ -9,6 +9,7 @@ module.exports = function () {
     }, function (username, password, done) {
         var url = 'mongodb://localhost:27017/libraryApp';
         mongodb.connect(url, function (err, db) {
+            var collection = db.collection('users');
             collection.findOne({
                     username: username
                 },
