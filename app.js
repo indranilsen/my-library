@@ -11,11 +11,11 @@ var port = process.env.PORT || 5000;
 
 var nav = [{
     Link: '/books',
-    Text: 'Book'
-    }, {
-    Link: '/authors',
-    Text: 'Author'
-    }];
+    Text: 'Book'}];
+//    }, {
+//    Link: '/authors',
+//    Text: 'Author'
+//    }];
 
 
 // Middleware
