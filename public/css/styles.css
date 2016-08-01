@@ -175,8 +175,18 @@ a:hover {
     color: #fff;
 }
 
-.btn-google-plus {
-    background-color: #d34836;
+.btn-linkedin {
+    background-color: #007BB6;
+    color: #fff;
+}
+
+.btn-github {
+    background-color: #444444;
+    color: #fff;
+}
+
+.btn-youtube {
+    background-color: #E02926;
     color: #fff;
 }
 
@@ -190,7 +200,17 @@ a:hover {
     color: #4C6BBA;
 }
 
-.btn-google-plus:hover {
-    background-color: #C23836;
-    color: #E45A58;
+.btn-linkedin:hover {
+    background-color: #195984;
+    color: #2176AF;
+}
+
+.btn-github:hover {
+    background-color: #343434;
+    color: #5A5A5A;
+}
+
+.btn-youtube:hover {
+    background-color: #B91D1A;
+    color: #EA6B69;
 }
